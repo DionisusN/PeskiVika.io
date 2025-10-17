@@ -1,0 +1,481 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2196F3;
+    --primary-dark: #1976D2;
+    --secondary: #4CAF50;
+    --tertiary: #FF9800;
+    --background: #f5f7fa;
+    --surface: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #546E7A;
+    --border: #E0E0E0;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.app-container {
+    min-height: 100vh;
+    max-width: 100%;
+    margin: 0 auto;
+    background: var(--surface);
+}
+
+/* Шапка */
+.app-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 20px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header-content .material-icons {
+    font-size: 28px;
+}
+
+.header-content h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Основной контент */
+.main-content {
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Карточки */
+.card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.card-header {
+    padding: 20px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card-header p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Заголовки столбцов */
+.columns-header {
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(33, 150, 243, 0.05);
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.column-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Сетка ввода */
+.input-grid {
+    padding: 0;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr;
+    gap: 8px;
+    padding: 12px 16px;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.input-row:last-child {
+    border-bottom: none;
+}
+
+.input-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+    text-align: center;
+    background: rgba(33, 150, 243, 0.1);
+    padding: 8px 4px;
+    border-radius: 8px;
+}
+
+.input-field {
+    position: relative;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 8px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: var(--transition);
+    background: var(--surface);
+    text-align: center;
+    min-height: 44px;
+}
+
+.input-field input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+/* Кнопки */
+.actions {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    border-top: 1px solid var(--border);
+}
+
+.btn {
+    padding: 14px 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+    min-height: 52px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background: var(--background);
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+}
+
+.btn-secondary:active {
+    background: var(--border);
+}
+
+/* Суммы */
+.totals-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.total-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: rgba(33, 150, 243, 0.05);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.total-item span {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.total-item strong {
+    color: var(--primary);
+    font-size: 15px;
+}
+
+/* Контейнер результатов */
+.results-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.results-table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+}
+
+.results-header {
+    background: rgba(33, 150, 243, 0.1);
+    position: sticky;
+    left: 0;
+}
+
+.results-header-row {
+    display: grid;
+    grid-template-columns: 50px 80px 80px 80px 80px 80px 80px;
+    gap: 1px;
+    background: rgba(33, 150, 243, 0.2);
+}
+
+.results-row {
+    display: grid;
+    grid-template-columns: 50px 80px 80px 80px 80px 80px 80px;
+    gap: 1px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.results-row:last-child {
+    border-bottom: none;
+}
+
+.cell {
+    padding: 12px 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    min-height: 44px;
+    border-right: 1px solid rgba(0,0,0,0.05);
+}
+
+.cell:last-child {
+    border-right: none;
+}
+
+.cell-header {
+    font-weight: 600;
+    background: rgba(33, 150, 243, 0.15);
+    color: var(--text-primary);
+    font-size: 12px;
+    padding: 10px 4px;
+}
+
+.cell-number {
+    background: rgba(76, 175, 80, 0.08);
+    font-weight: 500;
+}
+
+.cell-calc1 {
+    background: rgba(33, 150, 243, 0.08);
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.cell-calc2 {
+    background: rgba(255, 152, 0, 0.08);
+    font-weight: 500;
+    color: #E65100;
+}
+
+.cell-calc3 {
+    background: rgba(156, 39, 176, 0.08);
+    font-weight: 500;
+    color: #7B1FA2;
+}
+
+.cell-index {
+    background: rgba(0,0,0,0.05);
+    font-weight: 600;
+    font-size: 12px;
+    position: sticky;
+    left: 0;
+    z-index: 2;
+}
+
+/* Сводка */
+.summary {
+    padding: 16px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    background: rgba(0,0,0,0.02);
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.summary-item .material-icons {
+    font-size: 16px;
+    color: var(--primary);
+}
+
+/* Анимации */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-card {
+    animation: slideIn 0.3s ease;
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 360px) {
+    .main-content {
+        padding: 12px;
+    }
+
+    .header-content h1 {
+        font-size: 18px;
+    }
+
+    .card-header {
+        padding: 16px 12px;
+    }
+
+    .columns-header {
+        padding: 10px 12px;
+        grid-template-columns: 40px 1fr 1fr;
+    }
+
+    .input-row {
+        padding: 10px 12px;
+        grid-template-columns: 40px 1fr 1fr;
+    }
+
+    .input-label {
+        font-size: 12px;
+        padding: 6px 2px;
+    }
+
+    .input-field input {
+        padding: 10px 6px;
+        font-size: 14px;
+    }
+
+    .actions {
+        padding: 12px;
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 14px;
+        min-height: 48px;
+    }
+
+    .cell {
+        padding: 10px 2px;
+        font-size: 12px;
+        min-height: 40px;
+    }
+}
+
+/* Горизонтальная ориентация */
+@media (max-width: 600px) and (orientation: landscape) {
+    .main-content {
+        padding: 12px;
+    }
+
+    .input-row {
+        padding: 8px 12px;
+    }
+
+    .input-field input {
+        padding: 8px 6px;
+        min-height: 40px;
+    }
+}
+
+/* Убираем стрелки у number input */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Кастомный скроллбар для результатов */
+.results-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.results-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.results-container::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+/* Улучшения для touch */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 52px;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    .input-field input {
+        min-height: 44px;
+    }
+}

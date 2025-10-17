@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Производственный калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#2196F3">
+</head>
+<body>
+<div class="app-container">
+    <!-- Шапка -->
+    <header class="app-header">
+        <div class="header-content">
+            <span class="material-icons">calculate</span>
+            <h1>Производственный калькулятор</h1>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <!-- Карточка ввода -->
+        <div class="card input-card">
+            <div class="card-header">
+                <h2>Входные данные</h2>
+                <p>Заполните столбцы 1 и 2</p>
+            </div>
+
+            <!-- Заголовки столбцов -->
+            <div class="columns-header">
+                <div class="column-title">№</div>
+                <div class="column-title">Пески 1</div>
+                <div class="column-title">Пески 2</div>
+            </div>
+
+            <div class="input-grid" id="inputContainer">
+                <!-- Поля ввода генерируются через JS -->
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" onclick="calculate()">
+                    <span class="material-icons">calculate</span>
+                    Рассчитать
+                </button>
+                <button class="btn btn-secondary" onclick="clearAll()">
+                    <span class="material-icons">clear_all</span>
+                    Очистить
+                </button>
+            </div>
+        </div>
+
+        <!-- Карточка результатов -->
+        <div class="card result-card" id="resultCard" style="display: none;">
+            <div class="card-header">
+                <h2>Результаты расчетов</h2>
+                <div class="totals-container">
+                    <div class="total-item">
+                        <span>Сумма 1:</span>
+                        <strong id="total1">0.00</strong>
+                    </div>
+                    <div class="total-item">
+                        <span>Сумма 2:</span>
+                        <strong id="total2">0.00</strong>
+                    </div>
+                    <div class="total-item">
+                        <span>Сумма 3:</span>
+                        <strong id="total3">0.00</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-container" id="resultsContainer">
+                <!-- Результаты генерируются через JS -->
+            </div>
+
+            <div class="summary">
+                <div class="summary-item">
+                    <span class="material-icons">check_circle</span>
+                    <span>Расчеты завершены</span>
+                </div>
+                <div class="summary-item">
+                    <span class="material-icons">schedule</span>
+                    <span id="calculationTime"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
